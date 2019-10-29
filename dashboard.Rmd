@@ -1,0 +1,72 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("instacart")
+
+items_order_df = instacart %>% 
+  janitor::clean_names() %>% 
+  mutate(
+    aisle = as.factor(aisle)
+  ) %>% 
+  count(aisle) %>% #count the number of items in each aisle
+  filter(n > 10000) #filter items ordered > 10000
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+x = list(
+  title = "Count"
+)
+
+y = list(
+  title = "Aisle"
+)
+
+items_order_df %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(
+    x = ~n, y = ~aisle, type = "bar"
+  ) %>%  
+  layout(
+    xaxis = x,
+    yaxis = y,
+    title = "Figure 1: Number of items ordered in each aisle (>10000)"
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
