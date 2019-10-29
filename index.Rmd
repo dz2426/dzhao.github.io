@@ -1,7 +1,17 @@
 ---
-title: "Holy cow!"
+title: "Welcome to Duzhi's website"
+output: 
+  html_document:
+    
+    toc: true
+    toc_float: true
+editor_options: 
+  chunk_output_type: console
 ---
 
-### I have a webpage!
+You can learn about my academic and professional experience [here](about.html)
 
-And I can put all kinds of stuff on it!
+# About me
+
+I am a first year student studying Biostatistics at Columbia University Mailman School of Public Health.![](image/IMG_9529.JPG)
+
