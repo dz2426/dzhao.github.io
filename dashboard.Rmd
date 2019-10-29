@@ -59,25 +59,26 @@ Column {data-width=550}
 
 ```{r}
 # Create a template for x-axis and y-axis
-x1_template = list(
+y1_template = list(
   title = "Count",
   nticks = 20
 )
 
-y1_template = list(
+x1_template = list(
   title = "Aisle",
   nticks = 20
 )
 
+# Plot bar chart
 items_order_df %>% 
   mutate(aisle = fct_reorder(aisle, n)) %>% 
   plot_ly(
-    x = ~n, y = ~aisle, type = "bar"
+    x = ~aisle, y = ~n, type = "bar"
   ) %>%  
   layout(
     xaxis = x1_template,
     yaxis = y1_template,
-    title = "Figure 1: Number of items ordered in each aisle (>10000)"
+    title = "Figure 1. Number of items ordered in each aisle (>10k)"
   )
 ```
 
@@ -87,6 +88,7 @@ Column {data-width=450}
 ### Chart B
 
 ```{r warning = FALSE}
+# Create layout template for x-and y-axis
 x2_template = list(
   title = "Day of week"
 )
@@ -95,6 +97,7 @@ y2_template = list(
   title = "The hour of a day"
 )
 
+# Plot a grouped boxplot
 pink_coffee_df %>% 
   plot_ly(
     x = ~order_dow, y = ~order_hour_of_day, color = ~product_name, type = "box"
@@ -103,7 +106,8 @@ pink_coffee_df %>%
     boxmode = "group",
     title = "Figure 2. Distribution of the hour of the day at which \nPink Lady Apples and Coffee Ice Cream are ordered",
     xaxis = x2_template,
-    yaxis = y2_template
+    yaxis = y2_template,
+    legend = list(orientation = 'h') # put legend to bottom position
   )
 ```
 
