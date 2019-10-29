@@ -46,24 +46,25 @@ pink_coffee_df = instacart %>%
   select(order_hour_of_day, order_dow, product_name) %>% #select the data we are interested in
   filter(product_name %in% c("Pink Lady Apples", "Coffee Ice Cream")) %>% #filter out these two products
   arrange(order_dow, order_hour_of_day) %>% 
+  distinct() %>% 
   group_by(product_name)
 
 ```
 
 
-Column {data-width=650}
+Column {data-width=550}
 -----------------------------------------------------------------------
 
 ### Chart A
 
 ```{r}
 # Create a template for x-axis and y-axis
-x_template = list(
+x1_template = list(
   title = "Count",
   nticks = 20
 )
 
-y_template = list(
+y1_template = list(
   title = "Aisle",
   nticks = 20
 )
@@ -74,21 +75,35 @@ items_order_df %>%
     x = ~n, y = ~aisle, type = "bar"
   ) %>%  
   layout(
-    xaxis = x_template,
-    yaxis = y_template,
+    xaxis = x1_template,
+    yaxis = y1_template,
     title = "Figure 1: Number of items ordered in each aisle (>10000)"
   )
 ```
 
-Column {data-width=350}
+Column {data-width=450}
 -----------------------------------------------------------------------
 
 ### Chart B
 
-```{r}
+```{r warning = FALSE}
+x2_template = list(
+  title = "Day of week"
+)
+
+y2_template = list(
+  title = "The hour of a day"
+)
+
 pink_coffee_df %>% 
   plot_ly(
     x = ~order_dow, y = ~order_hour_of_day, color = ~product_name, type = "box"
+  ) %>% 
+  layout(
+    boxmode = "group",
+    title = "Figure 2. Distribution of the hour of the day at which \nPink Lady Apples and Coffee Ice Cream are ordered",
+    xaxis = x2_template,
+    yaxis = y2_template
   )
 ```
 
