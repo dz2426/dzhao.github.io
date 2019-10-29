@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About this site"
 output: 
   html_document:
     
@@ -9,8 +9,5 @@ editor_options:
   chunk_output_type: console
 ---
 
-### About this site
+This site is made by Rmarkdown and github repo pages. It is hosted by my github account, linked at the top right corner.
 
-Sometimes you need to say a bit about the site -- how it was made, where it's hosted, where the source code can be found. 
-
-If this is for a project or analysis, I recommend giving some details about the R package versions that you used to create the content.
