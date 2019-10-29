@@ -74,7 +74,7 @@ squash_df =
 Column {data-width=550}
 -----------------------------------------------------------------------
 
-### Chart A
+### Figure 1. Number of items ordered in each aisle (>10k)
 
 ```{r}
 # Create a template for x-axis and y-axis
@@ -101,15 +101,14 @@ items_order_df %>%
   ) %>%  
   layout(
     xaxis = x1_template,
-    yaxis = y1_template,
-    title = "Figure 1. Number of items ordered in each aisle (>10k)"
+    yaxis = y1_template
   )
 ```
 
 Column {data-width=450}
 -----------------------------------------------------------------------
 
-### Chart B
+### Figure 2. Mean hour of the day at which Pink Lady Apples and Coffee Ice Cream are ordered in a week
 
 ```{r warning = FALSE}
 # Create layout template for x-and y-axis
@@ -132,7 +131,6 @@ pink_coffee_df %>%
     type = "scatter", mode = "lines"
   ) %>% 
   layout(
-    title = "Figure 2. Mean hour of the day at which \nPink Lady Apples and Coffee Ice Cream are ordered in a week",
     font = f2,
     xaxis = x2_template,
     yaxis = y2_template,
@@ -140,7 +138,7 @@ pink_coffee_df %>%
   )
 ```
 
-### Chart C
+### Figure 3. Distribution of the hour of the day at which organic and inorganic acorn squash are ordered in a week
 
 ```{r warning = FALSE}
 # Create layout template for x- and y-axis
@@ -165,7 +163,6 @@ squash_df %>%
   ) %>% 
   layout(
     boxmode = "group",
-    title = "Figure 3. Distribution of the hour of the day at which \norganic and inorganic acorn squash are ordered in a week",
     xaxis = x3_template,
     yaxis = y3_template,
     legend = list(orientation = 'h'),
