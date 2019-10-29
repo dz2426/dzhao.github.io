@@ -1,5 +1,5 @@
 ---
-title: "Experience"
+title: "Academic and Professional Experience"
 output: 
   html_document:
     
@@ -9,5 +9,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-### Academic
+### Education
 
+Columbia University Mailman School of Public Health, New York, NY
+Master of Science in Biostatistics                                                                                                                            Expected May. 2021
+
+Brandeis University, Waltham, MA
+Bachelor of Science in Neuroscience                                                                                                                                                        May. 2019
+•	Senior Thesis:  Evaluating the Genetic Basis for the Priming Phenomenon of Drosophila
+•	Relevant Coursework: Computational Neurosciences, Principles of Neuroscience, Neurobiology of Human disease, SAS Applications, Psychology Statistics, Organic Chemistry, Genetics and Molecular Biology

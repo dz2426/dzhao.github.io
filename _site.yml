@@ -8,7 +8,9 @@ navbar:
     - text: "Experience"
       href: profession.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<dz2426@cumc.columbia.edu>
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/duzhizhao/
     - icon: fa-github fa-lg
       href: http://github.com/dz2426/
 output:
