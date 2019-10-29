@@ -7,7 +7,7 @@ navbar:
       href: about.html
     - text: "Experience"
       href: profession.html
-    - text: Examples
+    - text: Projects
       menu:
       - text: "Instacart Dashboard"
         href: dashboard.html

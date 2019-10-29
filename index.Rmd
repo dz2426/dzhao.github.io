@@ -9,15 +9,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-Learn more about this website from [here](about.html)<br />
-Learn more about my academic and professional experience [here](profession.html)<br />
-<br />
-
 ### About me
+
+<img src="image/IMG_9529.JPG" style="width: 200px; float: top">
 
 My name is Duzhi Zhao. I am from Shanghai, China and currently a first-year master student studying M.S Biostatistics at Columbia University Mailman School of Public Health. What brings me to this wonderful department is my passion in developing deeper understandings of neurological diseases (Alzheimer's and Parkinson's) and providing reasonable therapeutic plans from a statistical perspective.
 
-_Fun Fact: I used to be a keyboard player of a pop rock band during my undergraduate study. The band is called 'Hermit'._
+  _Fun Fact: I used to be a keyboard player of a pop rock band during my undergraduate study. The band was called 'Hermit'._
 
-![](image/IMG_9529.JPG){width=250px}
 

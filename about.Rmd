@@ -9,5 +9,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-This site is made by Rmarkdown and github repo pages. It is hosted by my github account, linked at the top right corner.
+<img src="image/Columbia-Mailman-school-logo.jpeg" style ="width: 300px; float: right">
+
+This site is made by Rmarkdown and github pages. It is hosted by my github account, linked at the top right corner. 
+
+This site is for introducing myself as a current M.S Biostatistics student in Columbia University. It includes my updated profiles and contains a list of data science projects and statistical analyses throughout my graduate study.
 
