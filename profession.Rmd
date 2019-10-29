@@ -11,10 +11,65 @@ editor_options:
 
 ### Education
 
-Columbia University Mailman School of Public Health, New York, NY
-Master of Science in Biostatistics                                                                                                                            Expected May. 2021
+**Columbia University Mailman School of Public Health**, New York, NY<br />
+Expected May. 2021<br />
+Master of Science in Biostatistics<br />
+_Relevant coursework: Biostatistics Method I, Human Population Genetics, Data Science, Probability_
+    
+**Brandeis University**, Waltham, MA<br /> 
+May. 2019<br />
+Bachelor of Science in Neurosciences<br />
+Senior thesis: Evaluating the Genetic Basis for the Priming Phenomenon of _Drosophila_<br />
+_Relevant coursework: Computational Neurosciences, Principles of Neuroscience, Neurobiology of Human disease, SAS Applications, Psychology Statistics, Organic Chemistry, Genetics and Molecular Biology_
+<br />
+<br />
 
-Brandeis University, Waltham, MA
-Bachelor of Science in Neuroscience                                                                                                                                                        May. 2019
-•	Senior Thesis:  Evaluating the Genetic Basis for the Priming Phenomenon of Drosophila
-•	Relevant Coursework: Computational Neurosciences, Principles of Neuroscience, Neurobiology of Human disease, SAS Applications, Psychology Statistics, Organic Chemistry, Genetics and Molecular Biology
+### Research 
+
+**Kunes Laboratory**, Harvard University, Cambridge, MA   
+    
+_Research student, working with Prof. Sam Kunes_
+    
+Jun. 2018 –- May. 2019 
+    
+ - Conducted research into how memory-related genes affected the dopamine-driven behavior of Drosophila during priming stage. 
+ 
+ - Crossed MB247 fruit flies with 10 different types of RNAi flies under UAS control.
+
+ - Used T-maze as learning apparatus to measure Drosophila’s performance index under each condition.
+
+**Ashton Graybiel Spatial Orientation Laboratory**, Brandeis University, Waltham MA
+
+_Research student, working with Prof. Paul DiZio_
+
+Feb. 2018 — Jun. 2018 
+
+ - Researched how human beings control their balance through visual and proprioceptive systems focusing on hand dominance effect of balancing pattern.
+
+ - Analyzed Inverted Pendulum Model data with MATLAB and joysticks to assess the motor learning curve of both hands.
+<br />
+<br />
+ 
+### Internship and Volunteer
+
+**Renji Hospital**, Neurology Department, Shanghai, China 
+
+_Intern Physician Assistant_
+
+Jul. 2016 – Aug. 2016
+
+  -	Assisted 3 resident physicians complete neurology department reports and weekly and monthly expenditures.
+  
+  - Reviewed daily conditions and medical expenses for 30+ patients.
+  
+  - Edited medical research papers on migraines. 
+  
+  - Interviewed 15 patients regarding their migraine diseases; used the Depression and Anxiety Stress Scale to support doctors’ medical assessments.
+
+**Movement for the Intellectually Disabled of Singapore**, Singapore
+
+_Student Volunteer_, Training & Development Center
+
+Aug. 2013 – Apr. 2015
+
+  - Developed programs to facilitate communication and improve basic movement and task oriented behaviors of 14 intellectually disabled people by collaborating with a team of 6.
