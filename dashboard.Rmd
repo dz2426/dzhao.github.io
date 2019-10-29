@@ -19,22 +19,14 @@ library(plotly)
 ```{r}
 data("instacart")
 
-# Data frame for Figure 1
-items_order_df = instacart %>% 
+# Tidy instacart dataset
+instacart_df = 
+  instacart %>% 
   janitor::clean_names() %>% 
   mutate(
-    aisle = as.factor(aisle)
-  ) %>% 
-  count(aisle) %>% #count the number of items in each aisle
-  filter(n > 10000) #filter items ordered > 10000
-```
-
-```{r}
-# Data frame for Figure 2.
-pink_coffee_df = instacart %>% 
-  mutate(
-  order_dow = as.factor(order_dow),
-  order_dow = recode(order_dow, 
+    aisle = as.factor(aisle),
+    order_dow = as.factor(order_dow),
+    order_dow = recode(order_dow, 
                        `0` = "Mon",
                        `1` = "Tue",
                        `2` = "Wed",
@@ -42,15 +34,42 @@ pink_coffee_df = instacart %>%
                        `4` = "Fri",
                        `5` = "Sat",
                        `6` = "Sun")
-  ) %>% 
-  select(order_hour_of_day, order_dow, product_name) %>% #select the data we are interested in
-  filter(product_name %in% c("Pink Lady Apples", "Coffee Ice Cream")) %>% #filter out these two products
-  arrange(order_dow, order_hour_of_day) %>% 
-  distinct() %>% 
-  group_by(product_name)
-
+  )
 ```
 
+```{r}
+# Data frame for Figure 1
+items_order_df = 
+  instacart_df %>% 
+  count(aisle) %>% #count the number of items in each aisle
+  filter(n > 10000) #filter items ordered > 10000
+```
+
+```{r}
+# Data frame for Figure 2.
+pink_coffee_df = 
+  instacart_df %>% 
+  select(order_hour_of_day, order_dow, product_name) %>% #select the data we are interested in
+  filter(product_name %in% c("Pink Lady Apples", "Coffee Ice Cream")) %>% #filter out these two products
+  group_by(order_dow, product_name) %>% 
+  arrange(order_dow, order_hour_of_day) %>% 
+  mutate(
+    mean_order_hour = round(mean(order_hour_of_day) , digits = 0)
+  ) %>% 
+  select(-order_hour_of_day) %>% 
+  distinct() %>% 
+  group_by(product_name)
+```
+
+```{r}
+# Data frame for Figure 3.
+squash_df = 
+  instacart_df %>% 
+  select(order_hour_of_day, order_dow, aisle, product_name) %>%
+  filter(product_name %in% c("Acorn Squash", "Organic Acorn Squash")) %>% 
+  select(-aisle) %>% 
+  group_by(product_name)
+```
 
 Column {data-width=550}
 -----------------------------------------------------------------------
@@ -59,17 +78,22 @@ Column {data-width=550}
 
 ```{r}
 # Create a template for x-axis and y-axis
+f1 = list(
+  size = 10
+)
+
+x1_template = list(
+  title = "Aisle",
+  tickfont = f1,
+  tickangle = 90
+)
+
 y1_template = list(
   title = "Count",
   nticks = 20
 )
 
-x1_template = list(
-  title = "Aisle",
-  nticks = 20
-)
-
-# Plot bar chart
+# Bar graph
 items_order_df %>% 
   mutate(aisle = fct_reorder(aisle, n)) %>% 
   plot_ly(
@@ -89,22 +113,27 @@ Column {data-width=450}
 
 ```{r warning = FALSE}
 # Create layout template for x-and y-axis
+f2 = list(
+  size = 9
+)
+
 x2_template = list(
   title = "Day of week"
 )
 
 y2_template = list(
-  title = "The hour of a day"
+  title = "Mean order hour of a day"
 )
 
-# Plot a grouped boxplot
+# Line plot
 pink_coffee_df %>% 
   plot_ly(
-    x = ~order_dow, y = ~order_hour_of_day, color = ~product_name, type = "box"
+    x = ~order_dow, y = ~mean_order_hour, color = ~product_name, 
+    type = "scatter", mode = "lines"
   ) %>% 
   layout(
-    boxmode = "group",
-    title = "Figure 2. Distribution of the hour of the day at which \nPink Lady Apples and Coffee Ice Cream are ordered",
+    title = "Figure 2. Mean hour of the day at which \nPink Lady Apples and Coffee Ice Cream are ordered in a week",
+    font = f2,
     xaxis = x2_template,
     yaxis = y2_template,
     legend = list(orientation = 'h') # put legend to bottom position
@@ -113,7 +142,34 @@ pink_coffee_df %>%
 
 ### Chart C
 
-```{r}
+```{r warning = FALSE}
+# Create layout template for x- and y-axis
+f3 = list(
+  size = 9
+)
 
+x3_template = list(
+  title = "Day of week"
+)
+
+y3_template = list(
+  title = "Order hour of a day",
+  nticks = 20
+)
+
+# Box plot 
+squash_df %>% 
+  plot_ly(
+    x = ~order_dow, y = ~order_hour_of_day, color = ~product_name, 
+    type = "box"
+  ) %>% 
+  layout(
+    boxmode = "group",
+    title = "Figure 3. Distribution of the hour of the day at which \norganic and inorganic acorn squash are ordered in a week",
+    xaxis = x3_template,
+    yaxis = y3_template,
+    legend = list(orientation = 'h'),
+    font = f3
+  )
 ```
 
